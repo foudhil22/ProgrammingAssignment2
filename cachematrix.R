@@ -1,17 +1,17 @@
-#function creat  special matrix 
+#function creat  special matrix
 
 # fix a mistake : "j" instead of "a"
 
 makeCacheMatrix <- function(x = matrix()) {
-  j <- NULL 
+  j <- NULL
   set <- function(y){
     x <<- y
     j <<- NULL
   }
   get <- function()x
   setInverse <- function(inverse) j <<- inverse
-  getInverse <- function() j 
-  list(set = set, get = get, 
+  getInverse <- function() j
+  list(set = set, get = get,
        setInverse = setInverse, 
        getInverse = getInverse)
 }
@@ -39,5 +39,3 @@ dim(x) <- c(3,3)
 cache <- makeCacheMatrix(x)
 #compute an inverse matrix
 cacheSolve(cache)
-
-
